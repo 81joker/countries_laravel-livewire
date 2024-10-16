@@ -1,0 +1,86 @@
+.tooltip-inner {
+    padding: 0.35rem 0.25rem !important;
+    background-color: $primary !important;
+}
+
+.content__title {
+    color: $primary;
+    position: relative;
+    font-size: clamp(2rem, 4.66vw, 2.875rem);
+    padding-bottom: 0.25rem;
+    margin-bottom: 2rem;
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        border-bottom: 4px solid $primary;
+        width: 3.3em;
+    }
+}
+
+/* country Info Item */
+
+.country-info-item {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        transition: transform 330ms ease-in;
+        &__content {
+            position: absolute;
+            letter-spacing: 0.2rem;
+            bottom: 0;
+            width: 100%;
+            overflow: hidden;
+            color: $primary;
+            z-index: 2;
+            font-size: clamp(18px, 2vw, 28px);
+            // font-size: clamp(22px, 2.5vw, 32px);
+            line-height: 1.15;
+            display: block;
+            font-weight: bold;
+            padding-left: 3rem;
+            background-color: rgba($white, 0.75);
+            text-transform: capitalize;
+            font-family: "Gill Sans", sans-serif;
+        }
+        .hover-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba($primary, 0.45);
+            opacity: 0;
+            transition: opacity 330ms ease-in;
+            z-index: 2;
+        }
+
+        &__image > img {
+            height: 200px;
+            transition: transform 330ms ease-in;
+        }
+        .image-02 {
+            display: none;
+        }
+    }
+
+    &__link:hover {
+        transform: scale(1.2);
+    }
+    &__link:hover .hover-overlay {
+        opacity: 1;
+    }
+    &:hover {
+        .image-01 {
+            display: none;
+        }
+        .image-02 {
+            display: block;
+        }
+    }
+}
